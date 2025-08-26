@@ -88,17 +88,24 @@ function displayJogadora(){
         jogadoraElement.classList.add('card-jogadora');
 
         jogadoraElement.innerHTML = `
+        <div>
         <br>
-        <p>${pegaJogadora.nome}</p>
+        <h1>${pegaJogadora.nome}</h1>
+        <br>
         <p>Posição: ${pegaJogadora.posicao}</p>
         <p>Clube: ${pegaJogadora.clube}</p>
-        ${pegaJogadora.foto ? `<img src="${pegaJogadora.foto}" alt="Imagem da Jogadora" style="max-width:150px;">` : ""}
-        <p>Gols: ${pegaJogadora.gols}</p>
-        <p>Assistencias: ${pegaJogadora.assistencias}</p>
-        <p>Jogos: ${pegaJogadora.jogos}</p>
-        <p>Favorita: ${pegaJogadora.favorita ? "⭐ Sim" : "Não"}</p>
-        <button data-action="Favoritar" data-index=${index}>Favoritar</button>
         <br>
+        ${pegaJogadora.foto ? `<img src="${pegaJogadora.foto}" alt="Imagem da Jogadora" style="max-width:150px;">` : ""}
+        <br>
+        <p>Gols: ${pegaJogadora.gols} Assistencias: ${pegaJogadora.assistencias}</p>
+        <p>Jogos: ${pegaJogadora.jogos}</p>
+        <br>
+        <p>Favorita: ${pegaJogadora.favorita ? "⭐ Sim" : "Não"}</p>
+        <button data-action="Favoritar" data-index=${index}>
+        <i class="fa-regular fa-bookmark"></i>
+        Favoritar</button>
+        <br>
+        </div>
         `
 
         jogadoraList.append(jogadoraElement);
