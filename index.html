@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro de Jogadoras</title>
+</head>
+<body>
+
+    <header><h1>Cadastro de Jogadoras de Futebol</h1></header>
+
+    <form id="postForm">
+        <h3>Insira seus Dados</h3>
+        <br>
+        <label for="postName">Insira seu nome completo</label><br>
+        <input type="text" id="postName" placeholder="Insira o nome aqui"><br>
+        <br>
+
+        <label for="postPosicao">Insira sua posição que você joga</label><br>
+        <input type="text" id="postPosicao" placeholder="Insira a posição aqui"><br>
+        <br>
+        
+        <label for="postClube">Insira o clube</label><br>
+        <input type="text" id="postClube" placeholder="Insira o clube aqui"><br>
+        <br>
+        
+        <label for="postFoto">Insira sua foto</label><br>
+        <input type="text" id="postClube" placeholder="Insira uma URL aqui"><br>
+        <br>
+        
+        <label for="postGols">Insira quantidade de Gols realizados</label><br>
+        <input type="text" id="postGols" placeholder="Insira a quantidade de gols"><br>
+        <br>
+        
+        <label for="postAssist">Insira quantidade de Assistencias realizadas</label><br>
+        <input type="text" id="postAssist" placeholder="Insira as assistencias"><br>
+        <br>
+        
+        <label for="postJogos">Insira quantidade de jogos jogados</label><br>
+        <input type="text" id="postJogos" placeholder="Insira a quantidade de jogos"><br>
+        <br>
+        
+        <button type="submit">Cadastrar</button>
+    </form>
+    
+    <!-- LISTA DE JOGADORAS -->
+    <div id="postList"></div>
+
+<script src="script.js"></script>    
+</body>
+
+</html>
