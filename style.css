@@ -27,6 +27,12 @@ a :visited {
     color: black;
 }
 
+#btnHover:hover{
+    color: palevioletred;
+    transform: scale(1.05);
+    transition: transform 0.2s;
+}
+
 body {
     background-color: rgb(53, 1, 102);
     
