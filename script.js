@@ -1,4 +1,4 @@
-[
+let jogadoras = [
   {
     "nome": "Andressa Alves",
     "posicao": "Meio-campo",
@@ -50,3 +50,19 @@
     "favorita": false
   }
 ]
+
+// Incicialização
+window.onload = function() {
+    carregarJogadorasLocalStorage();
+    displayJogadora()
+
+    document.getElementById('jogadoraForm').addEventListener('submit', addJogadora)
+}
+
+function carregarJogadorasLocalStorage(){
+    jogadorasGuardadas = localStorage.getItem("jogadoras");
+
+    if (jogadorasGuardadas) {
+        jogadoras = JSON.parse(jogadorasGuardadas)
+    }
+}
