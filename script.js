@@ -129,6 +129,7 @@ function addJogadora(event){
             
                 document.getElementById('jogadoraForm').reset()
                 displayJogadora()
+                alert("Jogadora adicionada com sucesso")
         }
 }
 
