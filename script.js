@@ -51,14 +51,21 @@ let jogadoras = [
   }
 ]
 
-// Incicialização
+// Inicialização
 window.onload = function() {
     carregarJogadorasLocalStorage();
-    displayJogadora()
 
-    document.getElementById('jogadoraForm').addEventListener('submit', addJogadora)
-    document.querySelector('#jogadoraList').addEventListener('click',handleClick)
+    const form = document.getElementById('jogadoraForm');
+    const lista = document.getElementById('jogadoraList');
 
+    if (form) {
+        form.addEventListener('submit', addJogadora);
+    }
+
+    if (lista) {
+        displayJogadora();
+        lista.addEventListener('click', handleClick);
+    }
 }
 
 function handleClick(event){
@@ -128,7 +135,7 @@ function addJogadora(event){
                 salvarLocalStorage()
             
                 document.getElementById('jogadoraForm').reset()
-                displayJogadora()
+                alert("Jogadora adicionada com sucesso")
         }
 }
 
