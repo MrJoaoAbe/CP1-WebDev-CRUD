@@ -93,6 +93,9 @@ body {
     transform: scale(1.05);
     transition: transform 0.2s;
 }
+#jogadoraForm {
+    text-align: center;
+}
 
 .card-jogadora{
     margin: 20px;
