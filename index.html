@@ -13,11 +13,22 @@
         <header><h1>Passa a bola</h1></header>
         <a href="paginaCadastro.html" id="btnHover"><h3>Cadastrar Jogadora</h3></a>
     </nav>
+
+    <!--  FILTROS E ORDENAÇÃO -->
+    <section class="filtros">
+        <input type="text" id="busca" placeholder="Buscar por nome ou posição...">
+
+        <select id="filtroTime">
+            <option value="">Todos os times</option>
+        </select>
+
+        <button id="ordenarNome">Ordenar por Nome</button>
+        <button id="ordenarPosicao">Ordenar por Posição</button>
+    </section>
     
     <!-- LISTA DE JOGADORAS -->
     <div id="jogadoraList"></div>
 
 <script src="script.js"></script>    
 </body>
-
 </html>
