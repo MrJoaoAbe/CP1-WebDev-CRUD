@@ -86,7 +86,7 @@ body {
     height: 50px;
     color: white;
     background-color: rgb(158, 80, 106);
-    border: none;
+    border: none;;
 }
 .divForm button:hover {
     background-color: palevioletred;

@@ -128,13 +128,11 @@ function displayJogadora(){
         <br>
         <p>Favorita: ${pegaJogadora.favorita ? "⭐ Sim" : "Não"}</p>
         <button data-action="Favoritar" data-index=${index}>Favoritar</button>
-        <div class="botoes-editar-remover">
-          <button data-action="Editar" data-index=${index}>Editar</button>
-          <button data-action="Remover" data-index=${index}>Remover</button>
-        </div>
+        <button data-action="Editar" data-index=${index}>Editar</button>
+        <button data-action="Remover" data-index=${index}>Remover</button>
         <br>
         </div>
-        `
+        `;
         jogadoraList.append(jogadoraElement);
     })
 }
