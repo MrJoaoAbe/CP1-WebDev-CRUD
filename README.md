@@ -85,4 +85,4 @@ CP1-WebDev-CRUD/
 ---
 
 ## Link da página WEB
-[Veja a página web](link)
+[Veja a página web]([link](https://mrjoaoabe.github.io/CP1-WebDev-CRUD/index.html))
