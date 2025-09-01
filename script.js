@@ -53,6 +53,88 @@ let jogadoras = [
 
 let indiceEdicao = null; // índice da jogadora em edição
 
+// ---------- BOTÕES BÔNUS ----------
+
+// Busca por nome ou posição
+document.getElementById("busca")?.addEventListener("input", function () {
+    const termo = this.value.toLowerCase();
+    const filtradas = jogadoras.filter(j =>
+        j.nome.toLowerCase().includes(termo) ||
+        j.posicao.toLowerCase().includes(termo)
+    );
+    displayJogadoraFiltrada(filtradas);
+});
+
+// Filtro por time
+function preencherFiltroTimes() {
+    const filtroTime = document.getElementById("filtroTime");
+    if (!filtroTime) return;
+
+    filtroTime.innerHTML = '<option value="">Todos os times</option>';
+    const times = [...new Set(jogadoras.map(j => j.clube))]; // pega clubes únicos
+
+    times.forEach(time => {
+        const opt = document.createElement("option");
+        opt.value = time;
+        opt.textContent = time;
+        filtroTime.appendChild(opt);
+    });
+}
+
+document.getElementById("filtroTime")?.addEventListener("change", function () {
+    if (this.value === "") {
+        displayJogadora();
+    } else {
+        const filtradas = jogadoras.filter(j => j.clube === this.value);
+        displayJogadoraFiltrada(filtradas);
+    }
+});
+
+// Ordenar por nome
+document.getElementById("ordenarNome")?.addEventListener("click", function () {
+    const ordenadas = [...jogadoras].sort((a, b) => a.nome.localeCompare(b.nome));
+    displayJogadoraFiltrada(ordenadas);
+});
+
+// Ordenar por posição
+document.getElementById("ordenarPosicao")?.addEventListener("click", function () {
+    const ordenadas = [...jogadoras].sort((a, b) => a.posicao.localeCompare(b.posicao));
+    displayJogadoraFiltrada(ordenadas);
+});
+
+// Função auxiliar: renderiza lista filtrada sem alterar o array original
+function displayJogadoraFiltrada(lista) {
+    const jogadoraList = document.getElementById('jogadoraList');
+    jogadoraList.innerHTML = '';
+
+    lista.forEach((pegaJogadora, index) => {
+        const jogadoraElement = document.createElement('div');
+        jogadoraElement.classList.add('card-jogadora');
+
+        jogadoraElement.innerHTML = `
+        <div>
+        <br>
+        <h1>${pegaJogadora.nome}</h1>
+        <br>
+        <p>Posição: ${pegaJogadora.posicao}</p>
+        <p>Clube: ${pegaJogadora.clube}</p>
+        <br>
+        ${pegaJogadora.foto ? `<img src="${pegaJogadora.foto}" alt="Imagem da Jogadora" style="max-width:150px;">` : ""}
+        <br>
+        <p>Gols: ${pegaJogadora.gols} Assistencias: ${pegaJogadora.assistencias}</p>
+        <p>Jogos: ${pegaJogadora.jogos}</p>
+        <br>
+        <p>Favorita: ${pegaJogadora.favorita ? "⭐ Sim" : "Não"}</p>
+        <button data-action="Favoritar" data-index=${index}>Favoritar</button>
+        <button data-action="Editar" data-index=${index}>Editar</button>
+        <button data-action="Remover" data-index=${index}>Remover</button>
+        <br>
+        </div>
+        `;
+        jogadoraList.append(jogadoraElement);
+    });
+}
+
 // Inicialização
 window.onload = function() {
     carregarJogadorasLocalStorage();
